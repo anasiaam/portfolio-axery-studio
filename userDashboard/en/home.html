@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AXERY STUDIO — Video Editing</title>
+    <link rel="stylesheet" href="../../assets/css/home_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-layer"></div>
+<div class="bg-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- TIMECODE BAR -->
+<div class="timecode-bar">
+    <span class="timecode-text">REC ●</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text" id="timecode">00:00:00:00</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text">4K · 60FPS · PRORES HQ</span>
+</div>
+
+<!-- NAV -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <div class="logo-line">
+            <span class="logo-apex">AXERY</span><span class="logo-frame">&nbsp;STUDIO</span>
+        </div>
+        <span class="logo-tagline">Motion · Edit · Craft</span>
+    </div>
+    <div class="nav-links">
+        <span class="nav-btn nav-btn--active">Home</span>
+        <a href="about.html" class="nav-btn"><span>About</span></a>
+        <a href="portfolio.html" class="nav-btn"><span>Portfolio</span></a>
+        <a href="contact.html" class="nav-btn"><span>Contact</span></a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<main class="hero">
+    <div class="hero-rule"></div>
+
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span class="eyebrow-bar"></span>
+            <span class="eyebrow-label">Video Production Studio</span>
+        </div>
+
+        <h1 class="hero-title">
+            <span class="title-line line-1">WE CRAFT FRAMES</span>
+            <span class="title-line line-2">THAT <span class="title-accent">SPEAK</span></span>
+        </h1>
+
+        <p class="hero-sub">
+            Cinematic edits. Visceral storytelling. Built for brands
+            that refuse to blend into the background.
+        </p>
+
+        <div class="hero-cta">
+            <a href="portfolio.html" class="cta-primary"><span>View Work</span></a>
+            <a href="contact.html" class="cta-secondary">
+                Start a project
+                <span class="cta-arrow"></span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <span class="ticker-label">Services</span>
+    <div class="ticker-track">
+        <span class="ticker-item">YOUTUBE VIDEOS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">EDITING</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE VIDEOS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">EDITING</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span>
+        <span class="ticker-dot">◆</span>
+    </div>
+</div>
+
+<script>
+    function updateTimecode() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2,'0');
+        const m = String(now.getMinutes()).padStart(2,'0');
+        const s = String(now.getSeconds()).padStart(2,'0');
+        const f = String(Math.floor(now.getMilliseconds() / 1000 * 60)).padStart(2,'0');
+        document.getElementById('timecode').textContent = `${h}:${m}:${s}:${f}`;
+    }
+    setInterval(updateTimecode, 1000/60);
+    updateTimecode();
+</script>
+
+</body>
+</html>

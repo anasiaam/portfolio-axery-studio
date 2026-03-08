@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AXERY STUDIO — Select Language</title>
+    <link rel="stylesheet" href="assets/css/index_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-layer"></div>
+<div class="bg-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- TIMECODE BAR -->
+<div class="timecode-bar">
+    <span class="timecode-text">REC ●</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text" id="timecode">00:00:00:00</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text">4K · 60FPS · PRORES HQ</span>
+</div>
+
+<!-- LOGO -->
+<div class="lang-logo">
+    <div class="logo-line">
+        <span class="logo-apex">AXERY</span><span class="logo-frame">&nbsp;STUDIO</span>
+    </div>
+    <span class="logo-tagline">Motion · Edit · Craft</span>
+</div>
+
+<!-- MAIN -->
+<main class="lang-main">
+
+    <!-- Eyebrow -->
+    <div class="lang-eyebrow">
+        <span class="eyebrow-bar"></span>
+        <span class="eyebrow-text">Select your language / Odaberite jezik</span>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="lang-heading">
+        <span class="lang-heading__line">CHOOSE</span>
+        <span class="lang-heading__line lang-heading__accent">LANGUAGE</span>
+    </h1>
+
+    <!-- Cards -->
+    <div class="lang-cards">
+
+        <!-- English -->
+        <a href="userDashboard/en/home.html" class="lang-card" data-lang="en" aria-label="Continue in English">
+            <div class="lang-card__top">
+                <span class="lang-card__code">EN</span>
+            </div>
+            <div class="lang-card__body">
+                <h2 class="lang-card__name">English</h2>
+                <p class="lang-card__native">English</p>
+            </div>
+            <div class="lang-card__arrow">
+                <span class="card-arrow-line"></span>
+            </div>
+            <div class="lang-card__hover-bar"></div>
+        </a>
+
+        <!-- Croatian -->
+        <a href="userDashboard/en/home.html" class="lang-card" data-lang="hr" aria-label="Nastavi na hrvatskom">
+            <div class="lang-card__top">
+                <span class="lang-card__code">HR</span>
+            </div>
+            <div class="lang-card__body">
+                <h2 class="lang-card__name">Croatian</h2>
+                <p class="lang-card__native">Hrvatski</p>
+            </div>
+            <div class="lang-card__arrow">
+                <span class="card-arrow-line"></span>
+            </div>
+            <div class="lang-card__hover-bar"></div>
+        </a>
+
+    </div><!-- /lang-cards -->
+
+    <!-- Sub note -->
+    <p class="lang-note">You can change this anytime in the menu.</p>
+
+</main>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <span class="ticker-label">Services</span>
+    <div class="ticker-track">
+        <span class="ticker-item">YOUTUBE VIDEOS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">COLOUR GRADING</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE VIDEOS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">COLOUR GRADING</span><span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span><span class="ticker-dot">◆</span>
+    </div>
+</div>
+
+<script>
+    /* ── Live timecode ── */
+    function updateTimecode() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2,'0');
+        const m = String(now.getMinutes()).padStart(2,'0');
+        const s = String(now.getSeconds()).padStart(2,'0');
+        const f = String(Math.floor(now.getMilliseconds() / 1000 * 60)).padStart(2,'0');
+        document.getElementById('timecode').textContent = `${h}:${m}:${s}:${f}`;
+    }
+    setInterval(updateTimecode, 1000/60);
+    updateTimecode();
+
+    /* ── On card click: save choice, do brief flash transition, then navigate ── */
+    document.querySelectorAll('.lang-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.dataset.lang;
+            const dest = this.getAttribute('href');
+
+            // Store preference
+            try { localStorage.setItem('axery_lang', lang); } catch(err) {}
+
+            // Activate this card visually
+            this.classList.add('selected');
+
+            // Flash-out the whole page, then navigate
+            document.body.classList.add('page-exit');
+            setTimeout(() => { window.location.href = dest; }, 480);
+        });
+    });
+</script>
+
+</body>
+</html>

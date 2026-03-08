@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AXERY STUDIO — Contact</title>
+    <link rel="stylesheet" href="../../assets/css/contact_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="page-contact">
+
+<!-- BACKGROUND -->
+<div class="bg-layer"></div>
+<div class="bg-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- TIMECODE BAR -->
+<div class="timecode-bar">
+    <span class="timecode-text">REC ●</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text" id="timecode">00:00:00:00</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text">4K · 60FPS · PRORES HQ</span>
+</div>
+
+<!-- NAV -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <div class="logo-line">
+            <span class="logo-apex">AXERY</span><span class="logo-frame">&nbsp;STUDIO</span>
+        </div>
+        <span class="logo-tagline">Motion · Edit · Craft</span>
+    </div>
+    <div class="nav-links">
+        <a href="home.html" class="nav-btn"><span>Home</span></a>
+        <a href="about.html" class="nav-btn"><span>About</span></a>
+        <a href="portfolio.html" class="nav-btn"><span>Portfolio</span></a>
+        <span class="nav-btn nav-btn--active">Contact</span>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="contact-wrap">
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="contact-header">
+        <div class="contact-header__label">
+            <span class="section-bar"></span>
+            <span class="section-label-text">Get In Touch</span>
+        </div>
+        <h1 class="contact-header__title">
+            <span class="contact-header__line">LET'S</span>
+            <span class="contact-header__line contact-header__line--accent">CONNECT</span>
+        </h1>
+        <p class="contact-header__sub">Tell us about your project and we'll get back to you within 24 hours</p>
+    </header>
+
+    <!-- ── BODY: FORM + INFO ── -->
+    <div class="contact-body">
+
+        <!-- ── CONTACT FORM ── -->
+        <!--
+            SETUP: Replace "YOUR_FORM_ID" in the action URL below with your
+            Formspree endpoint. Sign up free at https://formspree.io, create a
+            form, and paste the form ID (e.g. "xyzabcde") here.
+            Your form action should look like: https://formspree.io/f/xyzabcde
+        -->
+        <div class="contact-form-wrap contact-reveal">
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+                <!-- Destination email — Formspree will deliver here -->
+                <input type="hidden" name="_to"      value="anasiameshaj13@gmail.com" />
+
+                <!-- Row 1 — Name + Email -->
+                <div class="form-row">
+                    <div class="form-field">
+                        <label class="form-label" for="name">Full Name</label>
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required
+                        />
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input
+                                class="form-input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                autocomplete="email"
+                                required
+                        />
+                    </div>
+                </div>
+
+                <!-- Row 2 — Subject -->
+                <div class="form-row form-row--full" style="margin-top: 3px;">
+                    <div class="form-field">
+                        <label class="form-label" for="subject">Subject</label>
+                        <input
+                                class="form-input"
+                                type="text"
+                                id="subject"
+                                name="_subject"
+                                placeholder="What's your message about?"
+                                required
+                        />
+                    </div>
+                </div>
+
+                <!-- Row 3 — Project description -->
+                <div class="form-row form-row--full" style="margin-top: 3px;">
+                    <div class="form-field">
+                        <label class="form-label" for="message">Tell Us About Your Project</label>
+                        <textarea
+                                class="form-textarea"
+                                id="message"
+                                name="message"
+                                placeholder="Describe your project, platform, content type, goals, and any relevant details..."
+                                required
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- Hidden field — honeypot spam guard -->
+                <input type="text" name="_gotcha" style="display:none" />
+
+                <!-- Submit -->
+                <div class="form-submit-row">
+                    <span class="form-note">We reply within 24 hours</span>
+                    <button class="form-btn" type="submit" id="submit-btn">
+                        <span>Send Message</span>
+                        <span class="btn-arrow"></span>
+                    </button>
+                </div>
+
+                <!-- Status messages -->
+                <div class="form-status form-status--success" id="status-success">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Message sent — we'll be in touch shortly.</span>
+                </div>
+                <div class="form-status form-status--error" id="status-error">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="status-error-text">Something went wrong. Please try again.</span>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- ── RIGHT INFO PANEL ── -->
+        <div class="contact-info-panel">
+
+            <div class="info-card contact-reveal" style="--delay:0.08s">
+                <span class="info-card__label">Response Time</span>
+                <span class="info-card__value">Within 24 hours</span>
+            </div>
+
+            <div class="info-card contact-reveal" style="--delay:0.16s">
+                <span class="info-card__label">Based In</span>
+                <span class="info-card__value">Croatia<br>Available Worldwide</span>
+            </div>
+
+            <div class="info-card contact-reveal" style="--delay:0.24s">
+                <span class="info-card__label">Availability</span>
+                <span class="info-card__value info-card__value--available">
+                    <span class="availability-dot"></span>
+                    Accepting new projects
+                </span>
+            </div>
+
+            <div class="info-card contact-reveal" style="--delay:0.32s">
+                <span class="info-card__label">Platforms</span>
+                <span class="info-card__value">YouTube · TikTok<br>Reels · Shorts</span>
+            </div>
+
+        </div>
+
+    </div><!-- /contact-body -->
+
+    <!-- ── FOOTER RULE ── -->
+    <div class="contact-footer-rule">
+        <span class="cfr-line"></span>
+        <span class="cfr-text">AXERY STUDIO</span>
+        <span class="cfr-line"></span>
+    </div>
+
+</div><!-- /contact-wrap -->
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <span class="ticker-label">Services</span>
+    <div class="ticker-track">
+        <span class="ticker-item">YOUTUBE VIDEOS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">COLOUR GRADING</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE VIDEOS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SHORT FILMS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">CAPTIONS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">COLOUR GRADING</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">MUSIC SYNC</span>
+        <span class="ticker-dot">◆</span>
+    </div>
+</div>
+
+<script>
+    /* ── Live timecode ── */
+    function updateTimecode() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2,'0');
+        const m = String(now.getMinutes()).padStart(2,'0');
+        const s = String(now.getSeconds()).padStart(2,'0');
+        const f = String(Math.floor(now.getMilliseconds() / 1000 * 60)).padStart(2,'0');
+        document.getElementById('timecode').textContent = `${h}:${m}:${s}:${f}`;
+    }
+    setInterval(updateTimecode, 1000/60);
+    updateTimecode();
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.contact-header, .contact-reveal').forEach(el => observer.observe(el));
+
+    /* ── Form submission via Formspree (AJAX) ── */
+    const form      = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successEl = document.getElementById('status-success');
+    const errorEl   = document.getElementById('status-error');
+    const errorText = document.getElementById('status-error-text');
+
+    /* Basic client-side validation */
+    function validateForm() {
+        let valid = true;
+        ['name', 'email', 'subject', 'message'].forEach(id => {
+            const el = document.getElementById(id);
+            if (!el || !el.value.trim()) {
+                if (el) el.classList.add('error');
+                valid = false;
+            } else {
+                el.classList.remove('error');
+            }
+        });
+        // Email format check
+        const emailEl = document.getElementById('email');
+        if (emailEl.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+            emailEl.classList.add('error');
+            valid = false;
+        }
+        return valid;
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        successEl.classList.remove('show');
+        errorEl.classList.remove('show');
+
+        if (!validateForm()) {
+            errorText.textContent = 'Please fill in all required fields.';
+            errorEl.classList.add('show');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Sending...';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+            });
+
+            if (res.ok) {
+                form.reset();
+                successEl.classList.add('show');
+            } else {
+                const data = await res.json();
+                errorText.textContent = data.error || 'Something went wrong. Please try again.';
+                errorEl.classList.add('show');
+            }
+        } catch {
+            errorText.textContent = 'Network error. Please check your connection.';
+            errorEl.classList.add('show');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.querySelector('span').textContent = 'Send Message';
+        }
+    });
+
+    /* Clear error highlight on input */
+    document.querySelectorAll('.form-input, .form-select, .form-textarea').forEach(el => {
+        el.addEventListener('input', () => el.classList.remove('error'));
+    });
+</script>
+
+</body>
+</html>

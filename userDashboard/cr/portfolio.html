@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AXERY STUDIJU — Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/portfolio_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="page-portfolio">
+
+<!-- BACKGROUND -->
+<div class="bg-layer"></div>
+<div class="bg-overlay"></div>
+<div class="grain-overlay"></div>
+<div class="scanlines"></div>
+
+<!-- TIMECODE BAR -->
+<div class="timecode-bar">
+    <span class="timecode-text">REC ●</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text" id="timecode">00:00:00:00</span>
+    <span class="timecode-divider">|</span>
+    <span class="timecode-text">4K · 60FPS · PRORES HQ</span>
+</div>
+
+<!-- NAV -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <div class="logo-line">
+            <span class="logo-apex">AXERY</span><span class="logo-frame">&nbsp;STUDIJU</span>
+        </div>
+        <span class="logo-tagline">Motion · Montaža · Kreativnost</span>
+    </div>
+    <div class="nav-links">
+        <a href="home.html" class="nav-btn"><span>Početna</span></a>
+        <a href="about.html" class="nav-btn"><span>O nama</span></a>
+        <span class="nav-btn nav-btn--active">Portfolio</span>
+        <a href="contact.html" class="nav-btn"><span>Kontakt</span></a>
+    </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="portfolio-wrap">
+
+    <!-- PAGE HEADER -->
+    <header class="portfolio-header portfolio-reveal">
+        <div class="portfolio-header__label">
+            <span class="section-bar"></span>
+            <span class="section-label-text">Naši radovi</span>
+        </div>
+        <h1 class="portfolio-header__title">
+            <span class="portfolio-header__line">ODABRANI</span>
+            <span class="portfolio-header__line portfolio-header__line--accent">RADOVI</span>
+        </h1>
+        <p class="portfolio-header__sub">Pažljivo odabrani projekti koje smo izradili. Svaki kadar je namjeran.</p>
+    </header>
+
+    <!-- LANDSCAPE VIDEOS — 9 total -->
+    <section class="video-section-landscape portfolio-reveal" style="--delay:0.08s">
+        <div class="grid-section__label">
+            <span class="section-bar"></span>
+            <span class="grid-section__label-text">Dugi format &amp; horizontalni video</span>
+        </div>
+
+        <div class="video-grid-landscape">
+
+            <!-- 01 — Featured -->
+            <div class="video-item video-item--featured portfolio-reveal" style="--delay:0.10s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_1.mp4" preload="metadata" poster="../../assets/images/thmb_1.png"></video>
+                    <button class="play-btn" aria-label="Play video">
+                        <span class="play-icon"></span>
+                    </button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">01</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.14s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_2.mp4" preload="metadata" poster="../../assets/images/thmb_2.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">02</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.18s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_3.mp4" preload="metadata" poster="../../assets/images/thmb_3.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">03</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.22s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_4.mp4" preload="metadata" poster="../../assets/images/thmb_4.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">04</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.26s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_5.mp4" preload="metadata" poster="../../assets/images/thmb_5.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">05</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 06 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.30s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_6.mp4" preload="metadata" poster="../../assets/images/thmb_6.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">06</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 07 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.34s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_7.mp4" preload="metadata" poster="../../assets/images/thmb_7.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">07</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Podcast</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 08 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.38s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_8.mp4" preload="metadata" poster="../../assets/images/thmb_8.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">08</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Podcast</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 09 -->
+            <div class="video-item portfolio-reveal" style="--delay:0.42s">
+                <div class="video-frame">
+                    <video src="../../assets/videos/vid_9.mp4" preload="metadata" poster="../../assets/images/thmb_9.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">09</span>
+                    </div>
+                    <div class="video-tags">
+                        <span class="video-tag">Proizvod</span>
+                        <span class="video-tag">Reklama</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /video-grid-landscape -->
+    </section>
+
+    <!-- VERTICAL VIDEOS — 3 total -->
+    <section class="video-section-vertical portfolio-reveal" style="--delay:0.10s">
+        <div class="grid-section__label" style="margin-top: 32px;">
+            <span class="section-bar"></span>
+            <span class="grid-section__label-text">Short-Form &amp; Vertical</span>
+        </div>
+
+        <div class="video-grid-vertical">
+
+            <!-- 10 -->
+            <div class="video-item video-item--vertical portfolio-reveal" style="--delay:0.14s">
+                <div class="video-frame video-frame--vertical">
+                    <video src="../../assets/videos/vid_10.mp4" preload="metadata" poster="../../assets/images/thmb_10.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="video-item video-item--vertical portfolio-reveal" style="--delay:0.20s">
+                <div class="video-frame video-frame--vertical">
+                    <video src="../../assets/videos/vid_11.mp4" preload="metadata" poster="../../assets/images/thmb_11.png"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">11</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="video-item video-item--vertical portfolio-reveal" style="--delay:0.26s">
+                <div class="video-frame video-frame--vertical">
+                    <video src="../../assets/videos/vid_12.mp4" preload="metadata" poster="../../assets/images/thmb_12.jpeg"></video>
+                    <button class="play-btn" aria-label="Play video"><span class="play-icon"></span></button>
+                </div>
+                <div class="video-meta">
+                    <div class="video-meta__left">
+                        <span class="video-index">12</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /video-grid-vertical -->
+    </section>
+
+    <!-- FOOTER RULE -->
+    <div class="portfolio-footer-rule">
+        <span class="pfr-line"></span>
+        <span class="pfr-text">AXERY STUDIJU</span>
+        <span class="pfr-line"></span>
+    </div>
+
+</div><!-- /portfolio-wrap -->
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <span class="ticker-label">Usluge</span>
+    <div class="ticker-track">
+        <span class="ticker-item">YOUTUBE VIDEI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">KRATKI FILMOVI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TITLOVI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">KOLOR KOREKCIJA</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SINKRONIZACIJA GLAZBE</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE VIDEI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TIKTOK</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">YOUTUBE SHORTS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">INSTAGRAM REELS</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">KRATKI FILMOVI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">TITLOVI</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">KOLOR KOREKCIJA</span>
+        <span class="ticker-dot">◆</span>
+        <span class="ticker-item">SINKRONIZACIJA GLAZBE</span>
+        <span class="ticker-dot">◆</span>
+    </div>
+</div>
+
+<script>
+    /* ── Live timecode ── */
+    function updateTimecode() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2,'0');
+        const m = String(now.getMinutes()).padStart(2,'0');
+        const s = String(now.getSeconds()).padStart(2,'0');
+        const f = String(Math.floor(now.getMilliseconds() / 1000 * 60)).padStart(2,'0');
+        document.getElementById('timecode').textContent = `${h}:${m}:${s}:${f}`;
+    }
+    setInterval(updateTimecode, 1000/60);
+    updateTimecode();
+
+    /* ── Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.portfolio-reveal').forEach(el => revealObserver.observe(el));
+
+    /* ── Custom play/pause buttons ── */
+    document.querySelectorAll('.video-frame').forEach(frame => {
+        const video = frame.querySelector('video');
+        const btn   = frame.querySelector('.play-btn');
+        const icon  = btn.querySelector('.play-icon');
+
+        function syncIcon() {
+            // pause icon = two vertical bars via CSS class
+            btn.classList.toggle('is-playing', !video.paused);
+            btn.setAttribute('aria-label', video.paused ? 'Play video' : 'Pause video');
+        }
+
+        // Button click toggles play/pause
+        btn.addEventListener('click', () => {
+            if (video.paused) {
+                // Pause all other videos first
+                document.querySelectorAll('video').forEach(v => {
+                    if (v !== video) {
+                        v.pause();
+                        // sync other buttons
+                        const otherBtn = v.closest('.video-frame').querySelector('.play-btn');
+                        if (otherBtn) otherBtn.classList.remove('is-playing');
+                    }
+                });
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+
+        // Clicking on the video itself also toggles
+        video.addEventListener('click', () => btn.click());
+
+        video.addEventListener('play',  syncIcon);
+        video.addEventListener('pause', syncIcon);
+        video.addEventListener('ended', () => {
+            btn.classList.remove('is-playing');
+            // Show button again when video ends
+            btn.style.opacity = '1';
+        });
+
+        // Hide button briefly on play, show on pause/hover
+        video.addEventListener('play', () => {
+            // Fade out button after a short moment when playing
+            setTimeout(() => {
+                if (!video.paused) btn.style.opacity = '0';
+            }, 1200);
+        });
+        video.addEventListener('pause', () => { btn.style.opacity = '1'; });
+
+        // Show button on hover
+        frame.addEventListener('mouseenter', () => { btn.style.opacity = '1'; });
+        frame.addEventListener('mouseleave', () => {
+            if (!video.paused) btn.style.opacity = '0';
+        });
+    });
+</script>
+
+</body>
+</html>
