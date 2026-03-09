@@ -293,7 +293,7 @@
         submitBtn.querySelector('span').textContent = 'Sending...';
 
         try {
-            const res = await fetch(form.action, {
+            const res = await fetch('https://formspree.io/f/xdawagey%C5%BE', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: new FormData(form)
