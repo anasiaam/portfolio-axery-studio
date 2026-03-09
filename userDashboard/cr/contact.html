@@ -63,17 +63,8 @@
     <div class="contact-body">
 
         <!-- ── CONTACT FORM ── -->
-        <!--
-            SETUP: Replace "YOUR_FORM_ID" in the action URL below with your
-            Formspree endpoint. Sign up free at https://formspree.io, create a
-            form, and paste the form ID (e.g. "xyzabcde") here.
-            Your form action should look like: https://formspree.io/f/xyzabcde
-        -->
         <div class="contact-form-wrap contact-reveal">
-            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-
-                <!-- Destination email — Formspree will deliver here -->
-                <input type="hidden" name="_to" value="anasiameshaj13@gmail.com"/>
+            <form id="contact-form" action="https://formspree.io/f/xdawageyž" method="POST" novalidate>
 
                 <!-- Row 1 — Name + Email -->
                 <div class="form-row">
@@ -295,13 +286,13 @@
         errorEl.classList.remove('show');
 
         if (!validateForm()) {
-            errorText.textContent = 'Please fill in all required fields.';
+            errorText.textContent = 'Molimo ispunite sva obavezna polja.';
             errorEl.classList.add('show');
             return;
         }
 
         submitBtn.disabled = true;
-        submitBtn.querySelector('span').textContent = 'Sending...';
+        submitBtn.querySelector('span').textContent = 'Slanje...';
 
         try {
             const res = await fetch(form.action, {
@@ -315,15 +306,15 @@
                 successEl.classList.add('show');
             } else {
                 const data = await res.json();
-                errorText.textContent = data.error || 'Something went wrong. Please try again.';
+                errorText.textContent = data.error || 'Došlo je do greške. Pokušajte ponovno.';
                 errorEl.classList.add('show');
             }
         } catch {
-            errorText.textContent = 'Network error. Please check your connection.';
+            errorText.textContent = 'Greška u mreži. Provjerite internet vezu.';
             errorEl.classList.add('show');
         } finally {
             submitBtn.disabled = false;
-            submitBtn.querySelector('span').textContent = 'Send Message';
+            submitBtn.querySelector('span').textContent = 'Pošalji poruku';
         }
     });
 
