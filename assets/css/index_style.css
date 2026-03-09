@@ -490,6 +490,7 @@ body.page-exit { opacity: 0; }
     :root { --ticker-h: 32px; }
     .lang-logo { padding: 14px 20px 0; }
     .logo-apex, .logo-frame { font-size: 1.5rem; }
+    .nav-logo { margin-top: 10px; }
     .logo-tagline { font-size: 0.54rem; }
     .lang-main {
         padding-top: 80px;
@@ -508,6 +509,7 @@ body.page-exit { opacity: 0; }
 
 /* ── Mobile portrait ── */
 @media (max-width: 480px) {
+    .nav-logo { margin-top: 10px; }
     :root { --ticker-h: 28px; }
     .lang-logo { padding: 12px 16px 0; }
     .logo-apex, .logo-frame { font-size: 1.35rem; }
