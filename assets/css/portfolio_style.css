@@ -288,7 +288,6 @@ a.nav-btn:hover::before { transform: translateX(0); }
     background 0.22s ease,
     border-color 0.22s ease,
     transform 0.22s cubic-bezier(0.22,1,0.36,1);
-    /* start visible */
     opacity: 1;
 }
 .play-btn:hover {
@@ -304,11 +303,11 @@ a.nav-btn:hover::before { transform: translateX(0); }
     border-style: solid;
     border-width: 8px 0 8px 14px;
     border-color: transparent transparent transparent var(--paper);
-    margin-left: 3px; /* optical centre */
+    margin-left: 3px;
     transition: opacity 0.15s;
 }
 
-/* ── Pause icon: two CSS bars, shown when .is-playing ── */
+/* ── Pause icon: two CSS bars ── */
 .play-btn.is-playing .play-icon {
     width: 14px; height: 16px;
     border: none; margin-left: 0;
@@ -325,7 +324,6 @@ a.nav-btn:hover::before { transform: translateX(0); }
 .play-btn.is-playing .play-icon::before { left: 0; }
 .play-btn.is-playing .play-icon::after  { right: 0; }
 
-/* ── Ripple on click ── */
 .play-btn:active {
     transform: translate(-50%, -50%) scale(0.94);
 }
@@ -545,8 +543,14 @@ a.nav-btn:hover::before { transform: translateX(0); }
     .portfolio-header { margin-bottom: 48px; }
     .video-grid-landscape { grid-template-columns: 1fr; }
     .video-item--featured { grid-column: 1; }
-    .video-grid-vertical { grid-template-columns: repeat(2, 1fr); }
-    .video-item--vertical:last-child { grid-column: 1 / -1; max-width: 55%; margin: 0 auto; }
+
+    /* FIX: vertical grid stays 3-col at 900px — no weird centering on last item */
+    .video-grid-vertical { grid-template-columns: repeat(3, 1fr); }
+    .video-item--vertical:last-child { grid-column: auto; max-width: none; margin: 0; }
+
+    /* FIX: restore full 9:16 ratio — no height cap on tablets */
+    .video-frame--vertical { padding-top: 177.78%; }
+
     .portfolio-cta { flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px 32px; }
     .ticker-wrap { height: 34px; }
     .ticker-item { font-size: 0.64rem; }
@@ -554,17 +558,25 @@ a.nav-btn:hover::before { transform: translateX(0); }
 
 /* ── 700px ── */
 @media (max-width: 700px) {
-    .navbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 20px 0; }
+    /* FIX: navbar pushed down so logo isn't cramped against the very top */
+    .navbar {
+        flex-direction: column; align-items: flex-start;
+        gap: 10px; padding: 22px 20px 0;
+    }
     .nav-links { gap: 5px; flex-wrap: wrap; }
     .nav-btn { padding: 6px 12px; font-size: 0.68rem; letter-spacing: 0.14em; }
-    .portfolio-wrap { padding: 128px 20px 56px; }
+    .portfolio-wrap { padding: 138px 20px 56px; }
     .portfolio-header { margin-bottom: 36px; }
-    .video-grid-vertical { grid-template-columns: repeat(3, 1fr); }
+
+    /* FIX: vertical grid 2-col on mobile — each card wide enough to show full height */
+    .video-grid-vertical { grid-template-columns: repeat(2, 1fr); }
     .video-item--vertical:last-child { grid-column: auto; max-width: none; }
+
+    /* FIX: full 9:16 ratio preserved — no cropping */
+    .video-frame--vertical { padding-top: 177.78%; }
+
     .play-btn { width: 44px; height: 44px; }
-    .play-icon {
-        border-width: 6px 0 6px 11px;
-    }
+    .play-icon { border-width: 6px 0 6px 11px; }
     .video-meta { padding: 14px 16px; gap: 14px; }
     .portfolio-cta { padding: 26px 22px; margin-top: 36px; }
     .portfolio-cta__btn { width: 100%; justify-content: center; }
@@ -574,18 +586,20 @@ a.nav-btn:hover::before { transform: translateX(0); }
 
 /* ── 540px — vertical grid: single col ── */
 @media (max-width: 540px) {
+    /* FIX: single column, full 9:16 ratio, no height cap */
     .video-grid-vertical { grid-template-columns: 1fr; }
     .video-item--vertical:last-child { grid-column: 1; max-width: none; }
-    .video-frame--vertical { padding-top: 125%; }
+    .video-frame--vertical { padding-top: 177.78%; }
 }
 
 /* ── 480px ── */
 @media (max-width: 480px) {
-    .navbar { padding: 12px 16px 0; gap: 9px; }
+    /* FIX: logo pushed down a touch more on smallest screens */
+    .navbar { padding: 20px 16px 0; gap: 9px; }
     .logo-apex, .logo-frame { font-size: 1.38rem; }
     .logo-tagline { font-size: 0.46rem; }
     .nav-btn { padding: 5px 10px; font-size: 0.63rem; }
-    .portfolio-wrap { padding: 136px 14px 48px; }
+    .portfolio-wrap { padding: 144px 14px 48px; }
     .portfolio-header { margin-bottom: 28px; }
     .video-meta { padding: 12px 14px; gap: 10px; }
     .video-meta__left { gap: 10px; }
