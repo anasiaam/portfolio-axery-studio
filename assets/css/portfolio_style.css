@@ -559,7 +559,7 @@ a.nav-btn:hover::before { transform: translateX(0); }
 }
 
 @media (max-width: 700px) {
-    .navbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 22px 20px 0; }
+    .navbar { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 20px 0; }
     .nav-links { gap: 5px; flex-wrap: wrap; }
     .nav-btn { padding: 6px 12px; font-size: 0.68rem; letter-spacing: 0.14em; }
     .portfolio-wrap { padding: 138px 20px 56px; }
@@ -583,7 +583,7 @@ a.nav-btn:hover::before { transform: translateX(0); }
 }
 
 @media (max-width: 480px) {
-    .navbar { padding: 20px 16px 0; gap: 9px; }
+    .navbar { padding: 12px 16px 0; gap: 9px; }
     .logo-apex, .logo-frame { font-size: 1.38rem; }
     .logo-tagline { font-size: 0.46rem; }
     .nav-btn { padding: 5px 10px; font-size: 0.63rem; }
