@@ -8,6 +8,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        /* ── Page transitions ── */
+
+        /* Start invisible; JS adds .page-enter to fade in */
+        body { opacity: 0; }
+
+        body.page-enter {
+            animation: pageIn 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+        @keyframes pageIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        body.page-exit {
+            animation: pageOut 0.46s cubic-bezier(0.22,1,0.36,1) forwards;
+        }
+        @keyframes pageOut {
+            from { opacity: 1; }
+            to   { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
 
@@ -125,7 +148,18 @@
     setInterval(updateTimecode, 1000/60);
     updateTimecode();
 
-    /* ── On card click: save choice, do brief flash transition, then navigate ── */
+    /* ── Fade in on every load/restore ──
+       pageshow fires on both fresh loads AND bfcache restores (back/forward).
+       We always strip page-exit and trigger the fade-in so the page
+       is never left black after navigating back. */
+    window.addEventListener('pageshow', function () {
+        document.body.classList.remove('page-exit');
+        // Force a reflow so the animation restarts cleanly
+        void document.body.offsetWidth;
+        document.body.classList.add('page-enter');
+    });
+
+    /* ── On card click: save choice, fade out, then navigate ── */
     document.querySelectorAll('.lang-card').forEach(card => {
         card.addEventListener('click', function(e) {
             e.preventDefault();
@@ -138,7 +172,8 @@
             // Activate this card visually
             this.classList.add('selected');
 
-            // Flash-out the whole page, then navigate
+            // Fade out, then navigate
+            document.body.classList.remove('page-enter');
             document.body.classList.add('page-exit');
             setTimeout(() => { window.location.href = dest; }, 480);
         });
